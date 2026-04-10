@@ -1,16 +1,118 @@
-   32  rm -rf learning_git
-   33  https://github.com/jtxze/learning_git.git
-   34  git clone https://github.com/jtxze/learning_git.git
-   35  pwd
-   36  cd learning_git
-   37  open Favorite_Books.txt
-   38  git add Favorite_Books.txt
-   39  git commit -m "Removed several Books from list"
-   40  git commit -m "Removed several Books from list"
-   41  git add Favorite_Books.txt
-   42  git commit -m "Updated my book list"
-   43  git push
-   44  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
-   45  git push
-   46  git config --global --unset credential.helper
-   47  git push
+Last login: Fri Apr 10 10:38:27 on ttys002
+joshtouze@MacBook-Pro-6 Classwork % cd
+joshtouze@MacBook-Pro-6 ~ % git config --global user.name "jtxze"  
+joshtouze@MacBook-Pro-6 ~ % git config --global user.email "j.touze@icloud.com"
+ % git clone https://github.com/jtxze/learning_git#
+fg: no current job
+joshtouze@MacBook-Pro-6 ~ % git clone https://github.com/jtxze/learning_git
+fatal: destination path 'learning_git' already exists and is not an empty directory.
+joshtouze@MacBook-Pro-6 ~ % cd learning_git
+joshtouze@MacBook-Pro-6 learning_git % ls
+Classwork		Favorite_Books.txt	FavoriteThings.nb.html	FavoriteThings.Rmd	terminal_submission.txt
+joshtouze@MacBook-Pro-6 learning_git % open FavoriteThings.Rmd
+joshtouze@MacBook-Pro-6 learning_git % git add .
+warning: adding embedded git repository: Classwork
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint: 	git submodule add <url> Classwork
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint: 	git rm --cached Classwork
+hint:
+hint: See "git help submodule" for more information.
+hint: Disable this message with "git config set advice.addEmbeddedRepo false"
+joshtouze@MacBook-Pro-6 learning_git % cd
+joshtouze@MacBook-Pro-6 ~ % ls
+A Parents Guide to  Navigating the High School Years.pdf	Desktop								Movies
+adobeconnectapp_20260401_123402.log				Documents							Music
+adobeconnectapp_20260406_122013.log				Downloads							Pictures
+adobeconnectapp_20260407_121636.log				Formula_Sheet.R							Public
+adobeconnectapp_20260408_123444.log				Lab 5.pdf							Rhetorical Analysis Final Draft.docx
+AdobeConnectAppCache						Lab1.R								SAVE, INVEST, OR SPEND.pdf
+Applications							Lab5.pdf.Rmd							Sites
+Argumentative Essay Final Draft.docx				Lab5.R								UnrealEngine
+best_foot_forward_assess_rubric.pdf				learning_git							Welcome-to-Florida-Polytechnic-University 2 [Autosaved].pdf
+Data Analytics							Library								Welcome-to-Florida-Polytechnic-University 2 [Autosaved].pptx
+joshtouze@MacBook-Pro-6 ~ % cd learning_git
+joshtouze@MacBook-Pro-6 learning_git % cd
+joshtouze@MacBook-Pro-6 ~ % ls
+A Parents Guide to  Navigating the High School Years.pdf	Desktop								Movies
+adobeconnectapp_20260401_123402.log				Documents							Music
+adobeconnectapp_20260406_122013.log				Downloads							Pictures
+adobeconnectapp_20260407_121636.log				Formula_Sheet.R							Public
+adobeconnectapp_20260408_123444.log				Lab 5.pdf							Rhetorical Analysis Final Draft.docx
+AdobeConnectAppCache						Lab1.R								SAVE, INVEST, OR SPEND.pdf
+Applications							Lab5.pdf.Rmd							Sites
+Argumentative Essay Final Draft.docx				Lab5.R								UnrealEngine
+best_foot_forward_assess_rubric.pdf				learning_git							Welcome-to-Florida-Polytechnic-University 2 [Autosaved].pdf
+Data Analytics							Library								Welcome-to-Florida-Polytechnic-University 2 [Autosaved].pptx
+joshtouze@MacBook-Pro-6 ~ % cd learning_git
+joshtouze@MacBook-Pro-6 learning_git % ls
+Classwork		Favorite_Books.txt	FavoriteThings.nb.html	FavoriteThings.Rmd	terminal_submission.txt
+joshtouze@MacBook-Pro-6 learning_git % git add FavoriteThings.Rmd
+joshtouze@MacBook-Pro-6 learning_git % git add FavoriteThings.nb.html
+joshtouze@MacBook-Pro-6 learning_git % git commit -m "Added my Hobbies!"
+dquote> git push
+dquote> 
+dquote> exit
+dquote> close
+dquote> 
+joshtouze@MacBook-Pro-6 learning_git % git add FavoriteThings.Rmd FavoriteThings.nb.html
+joshtouze@MacBook-Pro-6 learning_git % git commit -m "Added my Hobbies!"
+dquote> 
+joshtouze@MacBook-Pro-6 learning_git % git commit -m "Added my Hobbies"
+[main d5e36ec] Added my Hobbies
+ 4 files changed, 32 insertions(+), 17 deletions(-)
+ create mode 160000 Classwork
+ create mode 100644 terminal_submission.txt
+joshtouze@MacBook-Pro-6 learning_git % git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.59 KiB | 1.59 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote: error: GH013: Repository rule violations found for refs/heads/main.
+remote: 
+remote: - GITHUB PUSH PROTECTION
+remote:   —————————————————————————————————————————
+remote:     Resolve the following violations before pushing again
+remote: 
+remote:     - Push cannot contain secrets
+remote: 
+remote:     
+remote:      (?) Learn how to resolve a blocked push
+remote:      https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+remote:     
+remote:     
+remote:       —— GitHub Personal Access Token ——————————————————————
+remote:        locations:
+remote:          - commit: d5e36ecf7e84c67948222bed80887d0a464e8682
+remote:            path: terminal_submission.txt:13
+remote:     
+remote:        (?) To push, remove secret from commit(s) or follow this URL to allow the secret.
+remote:        https://github.com/jtxze/learning_git/security/secret-scanning/unblock-secret/3CBRrzewTY7i2WlYIk0s7OWkWph
+remote:     
+remote: 
+remote: 
+To https://github.com/jtxze/learning_git.git
+ ! [remote rejected] main -> main (push declined due to repository rule violations)
+error: failed to push some refs to 'https://github.com/jtxze/learning_git.git'
+joshtouze@MacBook-Pro-6 learning_git % git push
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 1.59 KiB | 1.59 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jtxze/learning_git.git
+   4d50d59..d5e36ec  main -> main
+joshtouze@MacBook-Pro-6 learning_git % open terminal_submission.txt
+joshtouze@MacBook-Pro-6 learning_git % 
