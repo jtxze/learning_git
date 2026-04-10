@@ -1,0 +1,16 @@
+   32  rm -rf learning_git
+   33  https://github.com/jtxze/learning_git.git
+   34  git clone https://github.com/jtxze/learning_git.git
+   35  pwd
+   36  cd learning_git
+   37  open Favorite_Books.txt
+   38  git add Favorite_Books.txt
+   39  git commit -m "Removed several Books from list"
+   40  git commit -m "Removed several Books from list"
+   41  git add Favorite_Books.txt
+   42  git commit -m "Updated my book list"
+   43  git push
+   44  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
+   45  git push
+   46  git config --global --unset credential.helper
+   47  git push
