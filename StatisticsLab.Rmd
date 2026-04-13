@@ -1,0 +1,127 @@
+---
+title: "Iris Dataset Statistics Lab"
+author: "Alex Hurtado Desaulniers"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+
+# Libraries
+```{r}
+library(tidyverse)
+```
+
+# Load the iris dataset
+
+
+```{r}
+data(iris)
+```
+
+```{r} 
+# Changing names of each column
+colnames(iris) <- c("SepalLen", "SepalWid", "PetalLen", "PetalWid", "Species")
+```
+
+```{r} 
+# checking  first few rows
+head(iris)
+```
+
+## Questions:
+ 1. How many numeric columns are in the dataset? 4
+ 2. How many species are included? 3
+ 3. What is the range of SepalLen? (min and max) Minimum is 4.6 Maximum is 5.4 giving a range of 0.8.
+
+# Summary Statistics
+Calculate mean, median, variance, SD for numeric columns
+
+```{r}
+sapply(iris[,1:4], mean)
+sapply(iris[,1:4], median)
+sapply(iris[,1:4], var)
+sapply(iris[,1:4], sd)
+```
+
+## Questions:
+1. Which variable has the largest spread? 
+PetalLen has the largest spread, with a variance of 3.116 and a standard deviation of 1.765.
+2. Which has the smallest spread?
+SepalWid has the smallest spread, with a variance of 0.190 and a standard deviation of 0.436.
+3. How does the mean compare to the median for PetalLen?
+The mean for PetalLen is 3.758, which is lower than the median of 4.35
+4. What does a large variance indicate?
+A large variance indicates that the data points are spread out further from the mean, suggesting high variability in those measurements.
+
+# Summary by Species
+
+```{r}
+aggregate(SepalLen ~ Species, data=iris, FUN=mean)
+aggregate(PetalWid ~ Species, data=iris, FUN=var)
+```
+
+## Questions:
+ 1. Which species has the largest SepalLen on average? virginica 
+ 2. Which species shows the most variability in PetalWid? virginica, with a variance of 0.0754.
+ 3. What does this tell you about the characteristics of different species?
+It tell me that some that species are not uniform and that some like virginica may grow larger or have more physical diversity in certain traits than others.
+
+# Visualizations
+
+### Histogram of SepalLen
+
+```{r}
+hist(iris$SepalLen,
+     main="Sepal Length Distribution",
+     xlab="Sepal Length (cm)",
+     col="pink",
+     border="black")
+```
+
+## Questions:
+ 1. What is the shape of the distribution (symmetric, skewed)?
+ The distribution appears slightly left-skewed as there is a shorter "tail" toward the higher values (7–8 cm)
+ 2. Are there any unusually low or high values?
+Yes 4,7, and 8 are unusually low comapared to the rest of the graph.
+
+# Boxplot of PetalLen by Species
+
+```{r}
+boxplot(PetalLen ~ Species,
+        data=iris,
+        main="Petal Length by Species",
+        ylab="Petal Length (cm)",
+        col=c("pink","skyblue","purple"))
+```
+
+## Questions:
+ 1. Which species has the longest petals? virginica
+ 2. Are there any outliers visible? Yes, there are visible outliers (the small circles) for both setosa and versicolor.
+ 3. How do the distributions differ between species?
+Setosa has very short, tightly clustered petals; versicolor is in the middle range; and virginica has the longest petals with the most spread.
+
+# Correlation Matrix
+
+```{r}
+cor_matrix <- cor(iris[,1:4])
+cor_matrix
+```
+
+## Questions:
+ 1. Which two variables are most strongly correlated? 
+ PetalLen and PetalWid have the strongest positive correlation at 0.963.
+ 2. Are there any weak or negative correlations?
+ Yes, SepalLen and SepalWid have a weak negative correlation (-0.118), and SepalWid is negatively correlated with both petal measurements.
+ 
+ 3. How might these correlations help distinguish species?
+Strong correlations between petal length and width suggest that as one grows, the other does too, creating a specific "shape" profile that can be used to identify a species.
+
+# Interpretation 
+
+Write a short paragraph (3-5 sentences) answering:
+
+- Which variables best distinguish species?
+- How could a scientist use these statistics in real life?
+- Do the histograms, boxplots, and correlations tell a consistent story?
+
+PetalLen and PetalWid are the best variables for distinguishing species because their distributions (as seen in the boxplots) show almost no overlap between setosa and the other groups. A scientist could use these statistics in real life to develop automated classification tools for botany or to study evolutionary trends in plant morphology. The visualizations and correlations tell a consistent story: petal dimensions are highly predictable and serve as the primary distinguishing physical characteristic between these three Iris species.
