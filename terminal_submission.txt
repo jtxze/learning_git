@@ -115,4 +115,5 @@ remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To https://github.com/jtxze/learning_git.git
    4d50d59..d5e36ec  main -> main
 joshtouze@MacBook-Pro-6 learning_git % open terminal_submission.txt
-joshtouze@MacBook-Pro-6 learning_git % 
+joshtouze@MacBook-Pro-6 learning_git % git add terminal_submission.txt
+joshtouze@MacBook-Pro-6 learning_git % git commit -m "Added copy/pasted terminal work"  
